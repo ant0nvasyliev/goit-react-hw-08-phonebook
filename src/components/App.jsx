@@ -15,7 +15,7 @@ export const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
+    <div>
       <Toaster />
       <MainTitle>Phonebook</MainTitle>
       <ContactForm />
@@ -26,7 +26,7 @@ export const App = () => {
           <ContactList />
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default App;
