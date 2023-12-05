@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 // import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 // import { addContact } from '../../redux/contactsSlice';
-import { getContacts } from '../../redux/contactsSlice';
+import { fetchContacts } from '../../redux/contactsOperations';
 import { AddContacts } from '../../redux/contactsOperations';
 
 const schema = Yup.object().shape({
@@ -22,7 +22,7 @@ const schema = Yup.object().shape({
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(fetchContacts);
 
   return (
     <Formik
