@@ -1,10 +1,7 @@
 import { Formik, ErrorMessage } from 'formik';
 import { StyledForm, StyledFild, AddButton } from './ContactForm.styled';
 import * as Yup from 'yup';
-// import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-// import { addContact } from '../../redux/contactsSlice';
-import { fetchContacts } from '../../redux/contactsOperations';
 import { AddContacts } from '../../redux/contactsOperations';
 
 const schema = Yup.object().shape({
@@ -22,7 +19,7 @@ const schema = Yup.object().shape({
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(fetchContacts);
+  const contacts = useSelector(state => state.contacts.items);
 
   return (
     <Formik
@@ -46,7 +43,7 @@ export const ContactForm = () => {
         actions.resetForm();
       }}
     >
-      <StyledForm>
+      <StyledForm >
         <label>
           <StyledFild name="name" placeholder="entert name here" />
           <ErrorMessage name="name" />

@@ -7,5 +7,6 @@ export const filterSlice = createSlice({
     changeFilter: (state, action) => (state = `${action.payload}`),
   },
 });
-export const getFilter = state => state.filter;
+// export const getFilter = state => state.filter;
 export const { changeFilter } = filterSlice.actions;
+export const filterReducer = filterSlice.reducer;
