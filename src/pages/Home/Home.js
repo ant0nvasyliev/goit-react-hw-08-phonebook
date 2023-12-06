@@ -1,14 +1,14 @@
-
+import {HomePageContainer} from './Home.styled'
 
 export default function Home() {
   return (
-    <div>
+    <HomePageContainer>
       <h1>
-        Phone book welcome page{' '}
+        Welcome to the phone book{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
       </h1>
-    </div>
+    </HomePageContainer>
   );
 }

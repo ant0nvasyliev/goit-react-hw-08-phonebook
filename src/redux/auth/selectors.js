@@ -13,7 +13,6 @@ export const selectUser = state => selectUserRaw(state);
 
 export const selectIsRefreshing = state => selectIsRefreshingRaw(state);
 
-
 export const selectFilter = state => state.filter;
 export const selectContacts = state => state.contacts.items;
 
