@@ -29,14 +29,14 @@ export const LoginForm = () => {
           <LoginFormStyledFild
             type="email"
             name="email"
-            placeholder="entert email here"
+            placeholder="enter email here"
           />
         </label>
         <label>
           <LoginFormStyledFild
             type="password"
             name="password"
-            placeholder="entert password here"
+            placeholder="enter password here"
           />
         </label>
         <LogInButton type="submit">log In</LogInButton>

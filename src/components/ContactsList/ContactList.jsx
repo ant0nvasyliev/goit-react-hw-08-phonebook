@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { ContactListItem } from '../ContactListItem/ContactListItem';
 // import { selectAllContacts } from '../../redux/contactSelectors';
 import { selectContacts, selectFilter } from '../../redux/auth/selectors';
+import { StyledContactList, StyledListItem } from './ContactList.styled';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectContacts);
@@ -12,12 +13,12 @@ export const ContactsList = () => {
     );
   const filteredContacts = getFiltered();
   return (
-    <ul>
+    <StyledContactList>
       {filteredContacts.map(({ id, ...contact }) => (
-        <li key={id}>
+        <StyledListItem key={id}>
           <ContactListItem id={id} contact={contact} />
-        </li>
+        </StyledListItem>
       ))}
-    </ul>
+    </StyledContactList>
   );
 };
