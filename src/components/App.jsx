@@ -1,5 +1,3 @@
-
-
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -9,6 +7,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
@@ -22,7 +21,7 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return  isRefreshing ? (
+  return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
     <Routes>
@@ -50,6 +49,7 @@ export const App = () => {
           }
         />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
