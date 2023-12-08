@@ -48,8 +48,8 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
-      </Route>
       <Route path="*" element={<NotFoundPage />} />
+      </Route>
     </Routes>
   );
 };
